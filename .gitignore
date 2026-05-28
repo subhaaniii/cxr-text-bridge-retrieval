@@ -228,6 +228,7 @@ data_processed/
 checkpoints/
 outputs/
 results/
+data_generated/
 
 # Model checkpoints and heavy experiment artifacts
 *.pt
