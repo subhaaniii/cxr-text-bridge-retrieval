@@ -218,3 +218,9 @@ A natural next step is to replace the synthetic inputs with authorized real CXR 
 - **BioViL / CXR-BERT**: Benedikt Boecking et al. *Making the Most of Text Semantics to Improve Biomedical Vision-Language Processing*. ECCV, 2022.
 
 - **CXR-CLIP**: Kihyun You et al. *CXR-CLIP: Toward Large Scale Chest X-ray Language-Image Pre-training*. MICCAI, 2023.
+
+## Documentation
+
+- [Project framing](docs/project_framing.md)
+- [GPU training protocol](docs/gpu_training_protocol.md)
+- [Metric interpretation](docs/metric_interpretation.md)
