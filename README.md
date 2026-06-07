@@ -58,6 +58,47 @@ This repository should therefore be read as a GPU-based pipeline and alignment-b
 
 ---
 
+## CXR-Text Retrieval Visualizations
+
+The plots below summarize when the synthetic CXR-text retrieval bridge forms, weakens, or collapses.
+
+<table>
+  <tr>
+    <th>Retrieval bridge</th>
+    <th>Alignment similarity</th>
+    <th>Batch-size tradeoff</th>
+  </tr>
+  <tr>
+    <td width="33%">
+      <a href="figures/cxr_text_retrieval_bridge.png">
+        <img src="figures/cxr_text_retrieval_bridge.png" alt="CXR-text retrieval bridge" width="100%">
+      </a>
+    </td>
+    <td width="33%">
+      <a href="figures/cxr_text_alignment_similarity.png">
+        <img src="figures/cxr_text_alignment_similarity.png" alt="CXR-text alignment similarity" width="100%">
+      </a>
+    </td>
+    <td width="33%">
+      <a href="figures/cxr_text_batch_compute_tradeoff.png">
+        <img src="figures/cxr_text_batch_compute_tradeoff.png" alt="CXR-text batch compute tradeoff" width="100%">
+      </a>
+    </td>
+  </tr>
+</table>
+
+Each panel links to the full-resolution figure.
+
+| Panel | What to notice |
+|---|---|
+| **Retrieval bridge** | Easy mode forms a strong image-text bridge, shifted mode forms a weaker bridge, and noisy mode mostly collapses. |
+| **Alignment similarity** | Positive-pair similarity and Lift@50 show whether image-text alignment produces retrieval signal beyond random chance. |
+| **Batch-size tradeoff** | The shifted 30k comparison shows how batch size affects Recall@50, epoch time, and CUDA memory use. |
+
+These figures are qualitative diagnostics. The main conclusions are based on the quantitative results in `experiments/results_table.csv`.
+
+---
+
 ## Model
 
 The model is a dual encoder:
@@ -121,45 +162,6 @@ Full result interpretation:
 
 - [GPU experiment summary](experiments/results_summary.md)
 - [Collected result table](experiments/results_table.csv)
-
-## CXR-Text Retrieval Visualizations
-
-The plots below summarize when the synthetic CXR-text retrieval bridge forms, weakens, or collapses.
-
-<table>
-  <tr>
-    <th>Retrieval bridge</th>
-    <th>Alignment similarity</th>
-    <th>Batch-size tradeoff</th>
-  </tr>
-  <tr>
-    <td width="33%">
-      <a href="figures/cxr_text_retrieval_bridge.png">
-        <img src="figures/cxr_text_retrieval_bridge.png" alt="CXR-text retrieval bridge" width="100%">
-      </a>
-    </td>
-    <td width="33%">
-      <a href="figures/cxr_text_alignment_similarity.png">
-        <img src="figures/cxr_text_alignment_similarity.png" alt="CXR-text alignment similarity" width="100%">
-      </a>
-    </td>
-    <td width="33%">
-      <a href="figures/cxr_text_batch_compute_tradeoff.png">
-        <img src="figures/cxr_text_batch_compute_tradeoff.png" alt="CXR-text batch compute tradeoff" width="100%">
-      </a>
-    </td>
-  </tr>
-</table>
-
-Each panel links to the full-resolution figure.
-
-| Panel | What to notice |
-|---|---|
-| **Retrieval bridge** | Easy mode forms a strong image-text bridge, shifted mode forms a weaker bridge, and noisy mode mostly collapses. |
-| **Alignment similarity** | Positive-pair similarity and Lift@50 show whether image-text alignment produces retrieval signal beyond random chance. |
-| **Batch-size tradeoff** | The shifted 30k comparison shows how batch size affects Recall@50, epoch time, and CUDA memory use. |
-
-These figures are qualitative diagnostics. The main conclusions are based on the quantitative results in `experiments/results_table.csv`.
 
 ---
 
