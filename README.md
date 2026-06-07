@@ -30,34 +30,6 @@ The project evaluates:
 
 ---
 
-## Experiment Design
-
-The current benchmark uses controlled CXR-like synthetic images and report-style embeddings rather than real clinical data. This design is intentional: it allows the alignment signal, noise level, retrieval difficulty, and ground-truth pairing to be controlled before moving to authorized clinical datasets.
-
-The experiment should therefore be interpreted as a pipeline and alignment-behavior validation study, not as a clinical-performance claim.
-
-Three data modes are used:
-
-| Mode | Meaning |
-|---|---|
-| easy | clear image-text alignment signal |
-| shifted | harder cross-modal relationship |
-| noisy | heavily corrupted image/text signal |
-
-## Why Controlled Data Is Used
-
-The current benchmark uses controlled CXR-like synthetic images and report-style embeddings instead of real clinical images.
-
-This is intentional.
-
-The goal of this stage is to validate the image-text contrastive retrieval pipeline under known conditions before moving to authorized clinical datasets. Controlled data makes it possible to define the true image-text pair, adjust the difficulty level, and observe when the retrieval bridge forms, weakens, or collapses.
-
-In real clinical data, weak retrieval performance can come from many sources at once: noisy reports, imperfect image-report pairing, preprocessing differences, label ambiguity, or model limitations. The controlled setup isolates the alignment behavior of the training pipeline itself.
-
-This repository should therefore be read as a GPU-based pipeline and alignment-behavior validation study, not as a clinical-performance claim.
-
----
-
 ## CXR-Text Retrieval Visualizations
 
 The plots below summarize when the synthetic CXR-text retrieval bridge forms, weakens, or collapses.
@@ -97,6 +69,35 @@ Each panel links to the full-resolution figure.
 
 These figures are qualitative diagnostics. The main conclusions are based on the quantitative results in `experiments/results_table.csv`.
 
+---
+
+## Experiment Design
+
+The current benchmark uses controlled CXR-like synthetic images and report-style embeddings rather than real clinical data. This design is intentional: it allows the alignment signal, noise level, retrieval difficulty, and ground-truth pairing to be controlled before moving to authorized clinical datasets.
+
+The experiment should therefore be interpreted as a pipeline and alignment-behavior validation study, not as a clinical-performance claim.
+
+Three data modes are used:
+
+| Mode | Meaning |
+|---|---|
+| easy | clear image-text alignment signal |
+| shifted | harder cross-modal relationship |
+| noisy | heavily corrupted image/text signal |
+
+## Why Controlled Data Is Used
+
+The current benchmark uses controlled CXR-like synthetic images and report-style embeddings instead of real clinical images.
+
+This is intentional.
+
+The goal of this stage is to validate the image-text contrastive retrieval pipeline under known conditions before moving to authorized clinical datasets. Controlled data makes it possible to define the true image-text pair, adjust the difficulty level, and observe when the retrieval bridge forms, weakens, or collapses.
+
+In real clinical data, weak retrieval performance can come from many sources at once: noisy reports, imperfect image-report pairing, preprocessing differences, label ambiguity, or model limitations. The controlled setup isolates the alignment behavior of the training pipeline itself.
+
+This repository should therefore be read as a GPU-based pipeline and alignment-behavior validation study, not as a clinical-performance claim.
+
+---
 ---
 
 ## Model
